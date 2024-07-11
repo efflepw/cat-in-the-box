@@ -25,12 +25,12 @@ const Box = ({ initPosition, rotate }: Props) => {
   const { scale, position } = useSpring<SpringAnimationReturnType>({
     scale: hovered ? 1.2 : 1.1,
     position: active
-      ? [initPosition[0], initPosition[1] + 3, initPosition[2]]
+      ? [initPosition[0], initPosition[1] + 4, initPosition[2]]
       : initPosition,
-    config: { duration: 200 },
+    config: { duration: 250 },
     onRest: () => {
       if (active) {
-        setTimeout(() => setActive(false), 200);
+        setTimeout(() => setActive(false), 100);
       }
     },
   });

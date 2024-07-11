@@ -20,9 +20,7 @@ const ThreeCanvas = () => {
       <Box initPosition={[0, 0, 0]} rotate={0.1} />
       <Box initPosition={[0, 0, 6]} rotate={1} />
       <Box initPosition={[0, 0, 12]} rotate={0} />
-      <Cat position={[0, 0, 0]} />
-      {/* boxes */}
-      {/* kitty */}
+      <Cat position={[-0.5, -0.55, 0]} />
       {/* <OrbitControls /> */}
       {/* <CameraPosition /> */}
     </Canvas>

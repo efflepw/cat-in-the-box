@@ -8,7 +8,7 @@ type Props = {
 
 const Cat = ({ position }: Props) => {
   return (
-    <mesh position={position} rotation-y={1.6} scale={[0.55, 0.55, 0.55]}>
+    <mesh position={position} rotation-y={1.6} scale={[0.75, 0.75, 0.75]}>
       <CatModel />
     </mesh>
   );
