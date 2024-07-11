@@ -1,5 +1,5 @@
-import { useFrame, useThree } from "@react-three/fiber";
-import { useState } from "react";
+// import { useFrame, useThree } from "@react-three/fiber";
+// import { useState } from "react";
 
 const CameraPosition = () => {
   // const { camera } = useThree();

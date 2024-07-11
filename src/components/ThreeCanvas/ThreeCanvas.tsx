@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import Box from "../Box";
-import { OrbitControls } from "@react-three/drei";
-import CameraPosition from "../CameraPosition";
+// import { OrbitControls } from "@react-three/drei";
+// import CameraPosition from "../CameraPosition";
 
 const ThreeCanvas = () => {
   return (
@@ -14,15 +14,15 @@ const ThreeCanvas = () => {
         decay={0}
         intensity={Math.PI}
       />
-      <Box position={[0, 0, 0]} />
-      <Box position={[0, 0, 5]} />
-      <Box position={[0, 0, 10]} />
-      <Box position={[0, 0, -5]} />
-      <Box position={[0, 0, -10]} />
+      <Box initPosition={[0, 0, 0]} />
+      <Box initPosition={[0, 0, 5]} />
+      <Box initPosition={[0, 0, 10]} />
+      <Box initPosition={[0, 0, -5]} />
+      <Box initPosition={[0, 0, -10]} />
       {/* boxes */}
       {/* kitty */}
-      <OrbitControls />
-      <CameraPosition />
+      {/* <OrbitControls /> */}
+      {/* <CameraPosition /> */}
     </Canvas>
   );
 };
