@@ -1,14 +1,15 @@
 import { a, useSpring } from "@react-spring/three";
 // import { useFrame, Vector3 } from "@react-three/fiber";
+
 import { useRef, useState } from "react";
 import { Mesh } from "three";
+import BoxModel from "../BoxModel/BoxModel";
 
 type NNN = [number, number, number];
 
-const BOX_SHAPE: NNN = [2, 1.6, 2];
-
 type Props = {
   initPosition: NNN;
+  rotate: number;
 };
 
 type SpringAnimationReturnType = {
@@ -16,13 +17,13 @@ type SpringAnimationReturnType = {
   scale: number;
 };
 
-const Box = ({ initPosition }: Props) => {
+const Box = ({ initPosition, rotate }: Props) => {
   const mesh = useRef<Mesh>(null);
   const [hovered, setHovered] = useState(false);
   const [active, setActive] = useState(false);
 
   const { scale, position } = useSpring<SpringAnimationReturnType>({
-    scale: hovered ? 1.1 : 1,
+    scale: hovered ? 1.2 : 1.1,
     position: active
       ? [initPosition[0], initPosition[1] + 3, initPosition[2]]
       : initPosition,
@@ -33,13 +34,6 @@ const Box = ({ initPosition }: Props) => {
       }
     },
   });
-
-  // useFrame((_, delta) => {
-  //   if (mesh.current) {
-  //     // mesh.current.position.x += delta;
-  //     // mesh.current.position.y += delta;
-  //   }
-  // });
 
   return (
     <a.mesh
@@ -52,9 +46,9 @@ const Box = ({ initPosition }: Props) => {
       onPointerEnter={() => setHovered(true)}
       onPointerLeave={() => setHovered(false)}
       onClick={() => setActive(true)}
+      rotation-y={rotate}
     >
-      <boxGeometry args={BOX_SHAPE} />
-      <meshPhongMaterial color={"yellow"} />
+      <BoxModel />
     </a.mesh>
   );
 };
