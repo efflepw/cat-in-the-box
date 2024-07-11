@@ -15,6 +15,7 @@ type Props = {
 type SpringAnimationReturnType = {
   position: NNN;
   scale: number;
+  rotationZ: number;
 };
 
 const Box = ({ initPosition, rotate }: Props) => {
@@ -22,11 +23,12 @@ const Box = ({ initPosition, rotate }: Props) => {
   const [hovered, setHovered] = useState(false);
   const [active, setActive] = useState(false);
 
-  const { scale, position } = useSpring<SpringAnimationReturnType>({
+  const { scale, position, rotationZ } = useSpring<SpringAnimationReturnType>({
     scale: hovered ? 1.2 : 1.1,
     position: active
       ? [initPosition[0], initPosition[1] + 4, initPosition[2]]
       : initPosition,
+    rotationZ: active ? 1 : 0,
     config: { duration: 250 },
     onRest: () => {
       if (active) {
@@ -47,6 +49,7 @@ const Box = ({ initPosition, rotate }: Props) => {
       onPointerLeave={() => setHovered(false)}
       onClick={() => setActive(true)}
       rotation-y={rotate}
+      rotation-z={rotationZ}
     >
       <BoxModel />
     </a.mesh>

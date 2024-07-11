@@ -15,8 +15,8 @@ const ThreeCanvas = () => {
         decay={0}
         intensity={Math.PI}
       />
-      <Box initPosition={[0, 0, -12]} rotate={0.5} />
-      <Box initPosition={[0, 0, -6]} rotate={2} />
+      <Box initPosition={[0, 0, -12]} rotate={0.4} />
+      <Box initPosition={[0, 0, -6]} rotate={-0.4} />
       <Box initPosition={[0, 0, 0]} rotate={0.1} />
       <Box initPosition={[0, 0, 6]} rotate={1} />
       <Box initPosition={[0, 0, 12]} rotate={0} />
