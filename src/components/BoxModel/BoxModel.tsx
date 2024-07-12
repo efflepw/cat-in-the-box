@@ -1,4 +1,5 @@
 import { useGLTF } from "@react-three/drei";
+import { BOX_CONFIG } from "../../const/config";
 
 const BoxModel = () => {
   const { nodes, materials } = useGLTF("/box.glb");
@@ -9,8 +10,8 @@ const BoxModel = () => {
         // @ts-ignore
         geometry={nodes.Box.geometry}
         material={materials.Material}
-        position={[-0.16, 1.015, -0.071]}
-        scale={[1, 0.74, 1.4]}
+        position={BOX_CONFIG.position}
+        scale={BOX_CONFIG.scale}
       />
     </group>
   );

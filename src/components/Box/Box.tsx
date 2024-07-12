@@ -1,27 +1,40 @@
 import { a, useSpring } from "@react-spring/three";
-// import { useFrame, Vector3 } from "@react-three/fiber";
 
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Mesh } from "three";
 import BoxModel from "../BoxModel/BoxModel";
-
-type NNN = [number, number, number];
+import { MovesContext } from "../../context/moves";
 
 type Props = {
-  initPosition: NNN;
-  rotate: number;
+  idx: number;
+  initPosition: [number, number, number];
+  rotation: number;
 };
 
 type SpringAnimationReturnType = {
-  position: NNN;
+  position: [number, number, number];
   scale: number;
   rotationZ: number;
 };
 
-const Box = ({ initPosition, rotate }: Props) => {
+const Box = ({ initPosition, rotation: rotationY, idx }: Props) => {
   const mesh = useRef<Mesh>(null);
   const [hovered, setHovered] = useState(false);
   const [active, setActive] = useState(false);
+  const { addMove, pos } = useContext(MovesContext);
+
+  const onBoxClick = () => {
+    if (pos == null) {
+      setActive(true);
+      addMove(idx);
+    }
+  };
+
+  const onRest = () => {
+    if (active && pos == null) {
+      setTimeout(() => setActive(false), 100);
+    }
+  };
 
   const { scale, position, rotationZ } = useSpring<SpringAnimationReturnType>({
     scale: hovered ? 1.2 : 1.1,
@@ -30,11 +43,7 @@ const Box = ({ initPosition, rotate }: Props) => {
       : initPosition,
     rotationZ: active ? 1 : 0,
     config: { duration: 250 },
-    onRest: () => {
-      if (active) {
-        setTimeout(() => setActive(false), 100);
-      }
-    },
+    onRest,
   });
 
   return (
@@ -47,8 +56,8 @@ const Box = ({ initPosition, rotate }: Props) => {
       position={position}
       onPointerEnter={() => setHovered(true)}
       onPointerLeave={() => setHovered(false)}
-      onClick={() => setActive(true)}
-      rotation-y={rotate}
+      onClick={onBoxClick}
+      rotation-y={rotationY}
       rotation-z={rotationZ}
     >
       <BoxModel />
