@@ -1,4 +1,5 @@
 import { useGLTF } from "@react-three/drei";
+
 import { BOX_CONFIG } from "../../const/config";
 
 const BoxModel = () => {

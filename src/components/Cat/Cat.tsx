@@ -1,18 +1,19 @@
 import { useContext } from "react";
-import { MovesContext } from "../../context/moves";
 
-import CatModel from "../CatModel";
+import MovesContext from "../../context/moves";
 import { CAT_CONFIG } from "../../const/config";
 
-const Cat = () => {
-  const { pos } = useContext(MovesContext);
+import CatModel from "../CatModel";
 
-  if (pos == null) return <></>;
+const Cat = () => {
+  const { catBox } = useContext(MovesContext);
+
+  if (catBox == null) return <></>;
 
   const position = [
     CAT_CONFIG.positionX,
     CAT_CONFIG.positionY,
-    CAT_CONFIG.positionZA * pos + CAT_CONFIG.positionZB,
+    CAT_CONFIG.positionZA * catBox + CAT_CONFIG.positionZB,
   ] as const;
 
   return (

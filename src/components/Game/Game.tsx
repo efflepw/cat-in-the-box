@@ -1,4 +1,5 @@
 import { BOXES_CONFIG } from "../../const/config";
+
 import Box from "../Box";
 import Cat from "../Cat";
 

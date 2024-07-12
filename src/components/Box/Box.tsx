@@ -1,9 +1,10 @@
-import { a, useSpring } from "@react-spring/three";
-
 import { useContext, useRef, useState } from "react";
+import { a, useSpring } from "@react-spring/three";
 import { Mesh } from "three";
+
 import BoxModel from "../BoxModel/BoxModel";
-import { MovesContext } from "../../context/moves";
+
+import MovesContext from "../../context/moves";
 
 type Props = {
   idx: number;
@@ -21,17 +22,17 @@ const Box = ({ initPosition, rotation: rotationY, idx }: Props) => {
   const mesh = useRef<Mesh>(null);
   const [hovered, setHovered] = useState(false);
   const [active, setActive] = useState(false);
-  const { addMove, pos } = useContext(MovesContext);
+  const { addMove, catBox } = useContext(MovesContext);
 
   const onBoxClick = () => {
-    if (pos == null) {
+    if (catBox == null) {
       setActive(true);
       addMove(idx);
     }
   };
 
   const onRest = () => {
-    if (active && pos == null) {
+    if (active && catBox == null) {
       setTimeout(() => setActive(false), 100);
     }
   };
