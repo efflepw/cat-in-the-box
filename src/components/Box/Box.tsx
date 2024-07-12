@@ -2,7 +2,7 @@ import { useContext, useRef, useState } from "react";
 import { a, useSpring } from "@react-spring/three";
 import { Mesh } from "three";
 
-import BoxModel from "../BoxModel/BoxModel";
+import BoxModel from "./BoxModel";
 
 import MovesContext from "../../context/moves";
 

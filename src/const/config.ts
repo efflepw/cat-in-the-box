@@ -3,11 +3,6 @@ type ConfigType = {
   rotation: number;
 };
 
-export const BOX_CONFIG = {
-  position: [-0.16, 1.015, -0.071] as const,
-  scale: [1, 0.74, 1.4] as const,
-};
-
 export const CAT_CONFIG = {
   positionX: -0.5,
   positionY: -0.5,

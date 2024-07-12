@@ -3,7 +3,7 @@ import { useContext } from "react";
 import MovesContext from "../../context/moves";
 import { CAT_CONFIG } from "../../const/config";
 
-import CatModel from "../CatModel";
+import CatModel from "./CatModel";
 
 const Cat = () => {
   const { catBox } = useContext(MovesContext);
