@@ -18,7 +18,7 @@ const MovesList = () => {
     <div className="absolute bottom-16 left-0 right-0">
       {catBox != null && (
         <div className="flex justify-center py-16">
-          <span className="text-5xl text-slate-500">
+          <span className="text-5xl text-slate-500 select-none">
             {CONGRATULATIONS} {moves.length} {MOVES}
           </span>
         </div>

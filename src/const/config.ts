@@ -13,13 +13,13 @@ export const CAT_CONFIG = {
 };
 
 export const BOXES_CONFIG: ConfigType[] = [
-  { position: [0, 0, 18], rotation: 1.2 },
-  { position: [0, 0, 12], rotation: 0.4 },
-  { position: [0, 0, 6], rotation: -0.4 },
-  { position: [0, 0, 0], rotation: 0.3 },
-  { position: [0, 0, -6], rotation: 0.1 },
-  { position: [0, 0, -12], rotation: -0.4 },
-  { position: [0, 0, -18], rotation: -0.6 },
+  { position: [-1, 0, 18], rotation: 1 },
+  { position: [-1, 0, 12], rotation: 0.4 },
+  { position: [-1, 0, 6], rotation: -0.4 },
+  { position: [-1, 0, 0], rotation: 0.3 },
+  { position: [-1, 0, -6], rotation: 0.1 },
+  { position: [-1, 0, -12], rotation: -0.4 },
+  { position: [-1, 0, -18], rotation: -0.6 },
 ];
 
 export const BOX_COUNT = BOXES_CONFIG.length;

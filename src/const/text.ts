@@ -1,6 +1,7 @@
 export const INTRO_TEXT = `There's a sneaky little cat hiding in one of the seven boxes. After each move, the cat slips to an adjacent box, exactly one box away from where it was before. You can open one box to see if the cat is there. Can you find the cat?`;
 
-export const CONGRATULATIONS = "Yay! You found the fluffy, sneaky cat in just";
+export const CONGRATULATIONS =
+  "Yaaay! You found the fluffy, sneaky cat in just";
 export const MOVES = "moves!";
 
 export const MOVES_COLORS = [
