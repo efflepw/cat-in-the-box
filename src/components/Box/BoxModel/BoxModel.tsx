@@ -1,7 +1,7 @@
 import { useGLTF } from "@react-three/drei";
 
 const BoxModel = () => {
-  const { nodes, materials } = useGLTF("/box.glb");
+  const { nodes, materials } = useGLTF(import.meta.env.BASE_URL + "/box.glb");
 
   return (
     <group dispose={null}>
@@ -18,4 +18,4 @@ const BoxModel = () => {
 
 export default BoxModel;
 
-useGLTF.preload("/box.glb");
+useGLTF.preload(import.meta.env.BASE_URL + "/box.glb");
