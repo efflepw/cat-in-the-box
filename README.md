@@ -33,7 +33,9 @@ To get started with the app, follow these steps:
     ```bash
     npm run dev
     ```
-![Screenshot 2024-07-11 at 10 53 22 PM](https://github.com/user-attachments/assets/f8b20c36-b3fc-48bd-9a52-51fb416c8e60)
+
+## TRY IT!
+https://efflepw.github.io/cat-in-the-box/
 
 
 
